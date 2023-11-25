@@ -50,19 +50,11 @@ library(Stat2Data)
 data("Diamonds")  #351개 다이아몬드 샘플의 가격과 특성
 str(Diamonds)
 
-colors()
-
-price_col=rep('pink2',9)
-price_col[3]='red'
-
 hist(Diamonds$PricePerCt, main = '캐럿당 가격 분포',
      xlab = '캐럿당 가격($)',
-     ylab = '빈도수',
+     ylab = '빈도수'
      #  속성추가
-    col = price_col,
-    border='tan3',
-    breaks=9,
-    las=1
+
      )
 
 
@@ -75,8 +67,8 @@ pie(ds, main='선호 계절',
     radius=1,
     col=rainbow(4),
     #  속성추가
-    init.angle=90,
-    clockwise=T
+    
+    
     )
 
 
@@ -84,14 +76,11 @@ install.packages('plotrix')
 library(plotrix)
 
 pie3D(ds, main='선호 계절',
-      #속성추가
-      labels=names(ds),
-      lavelcex=1.0,
-      explode = 0.1,
-      radius = 1.5,
-      col=c('brown','green','red','yellow')
+      col=rainbow(4)
+      #  속성추가
+      
+      
       )
-
 #5) 선 그래프
 
 month <- seq(1,12, by=1) 			 #month <- 1:12
@@ -99,39 +88,27 @@ late <- c(5,8,7,9,4,6,12,13,8,6,6,4)
 
 plot(month, 			 
      late, 			   
-     main='지각생 통계',
+     main='지각생 통계', 
      xlab='Month', 		 
      ylab='Late cnt',
      #속성추가(그래프의 종류, 선의종류, 굵기)
-     type='l',
-     lty=2,
-     lwd=2
+     
 )
 
 # 다중 선그래프
 late2 <- c(4,6,5,8,7,8,10,11,6,5,7,3)
-lines(month,late2,
-      col='blue') 
+ 
 
 late3 <- c(5,6,5,6,5,6,5,6,5,6,5,6)
-lines(late3,
-      type="s",
-      col='red')
 
 
 #6) 상자그림
-cars$speed
 
 boxplot(cars$dist, 
-        main='자동차 제동거리',
-        col='red')
-boxplot.stats(car$dist)
-
-str(iris)
+        main='자동차 제동거리')
 
 boxplot( #그룹정보가 있는 데이터
-        #Petal.Length~Species,data=iris,
-        iris$Petal.Length ~iris$Species,
+        
         main='품종별 꽃잎의 길이',
         col=c('green','yellow','blue')) 
 
@@ -140,12 +117,11 @@ boxplot( #그룹정보가 있는 데이터
 str(mtcars)
 
 plot( #데이터 입력: x,y축
-    mtcars$wt,mtcars$mpg,  
+  
      main='중량-연비 그래프', 
      xlab='중량', 	
      ylab='연비(MPG)', 	
      col='red', 	
-    pch=14
                           #point의 종류 
      ) 		
 
